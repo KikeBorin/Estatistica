@@ -18,18 +18,30 @@ function calcular(){
     let sequenciaDigitada = [numero1, numero2, numero3, numero4, numero5, numero6, numero7, numero8, numero9, numero10];
     document.querySelector('.sequenciaDigitada').innerHTML = "Sequência Digitada = " + sequenciaDigitada + ".";
 
-    let media = (numero1 + numero2 + numero3 + numero4 + numero5 + numero6 + numero7 + numero8 + numero9 + numero10)/10;
+    let somaSequenciaDigitada = 0;
+    
+    for(let i = 0; i < 10; i++){        
+        somaSequenciaDigitada += sequenciaDigitada[i];          
+    }
+    
+    let sequenciaOrdenada = sequenciaDigitada.sort((a,b)=> a - b);
+    document.querySelector('.sequenciaOrdenada').innerHTML = "Sequência Ordenada = " + sequenciaOrdenada + ".";
+
+    let mediana = (sequenciaOrdenada[4] + sequenciaOrdenada[5])/2;
+    document.querySelector('.mediana').innerHTML = "Mediana = " + mediana;
+    
+    let media = somaSequenciaDigitada/sequenciaDigitada.length;  
     document.querySelector('.media').innerHTML = "Media = " + media;
     
     let DPp = Math.sqrt((Math.pow((numero1 - media),2) + Math.pow((numero2 - media),2) + Math.pow((numero3 - media),2)
     + Math.pow((numero4 - media),2) + Math.pow((numero5 - media),2) + Math.pow((numero6 - media),2)
     + Math.pow((numero7 - media),2) + Math.pow((numero8 - media),2) + Math.pow((numero9 - media),2)
-    + Math.pow((numero10 - media),2))/10);
+    + Math.pow((numero10 - media),2))/sequenciaDigitada.length);
     document.querySelector('.DPp').innerHTML = "Desvio Padrão - (População) = " + DPp;
 
     let DPa = Math.sqrt((Math.pow((numero1 - media),2) + Math.pow((numero2 - media),2) + Math.pow((numero3 - media),2)
     + Math.pow((numero4 - media),2) + Math.pow((numero5 - media),2) + Math.pow((numero6 - media),2)
     + Math.pow((numero7 - media),2) + Math.pow((numero8 - media),2) + Math.pow((numero9 - media),2)
-    + Math.pow((numero10 - media),2))/(10-1));
+    + Math.pow((numero10 - media),2))/(sequenciaDigitada.length-1));
     document.querySelector('.DPa').innerHTML = "Desvio Padrão - (Amostra) = " + DPa;
 }
