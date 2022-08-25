@@ -6,6 +6,8 @@ Objetivo:
 Funcionamento:
   O usuário poderá lançar 10 valores e receberá na tela o resultado da sequência que digitou, na ordem digitada e na ordem crescente. Receberá também na tela a Média, Mediana, Desvio Padrão da População e da Amostra.
   
+Tecnologias empregadas: HTML + CSS + JavaScript.
+  
 Link do projeto para acesso:
   https://kikeborin.github.io/Estatistica/
 
